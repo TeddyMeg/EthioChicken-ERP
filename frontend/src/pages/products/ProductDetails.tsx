@@ -9,7 +9,6 @@ import { useReviews } from '../../hooks/useReviews';
 import ReviewForm from '../../components/reviews/ReviewForm';
 import ReviewList from '../../components/reviews/ReviewList';
 import { 
-  Package2, 
   Loader2, 
   ChevronLeft, 
   ShoppingCart,

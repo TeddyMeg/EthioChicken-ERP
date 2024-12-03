@@ -1,7 +1,6 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faWebAwesome, faFacebook, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import {  faFacebook, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 
 
