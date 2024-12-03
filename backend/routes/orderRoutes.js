@@ -6,7 +6,10 @@ import {
   getMyOrders,
   getAllOrders,
   updateOrder,
-  deleteOrder
+  deleteOrder,
+  confirmOrder,
+  denyOrder,
+  updateShipmentDetails,
 } from '../controllers/orderController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
@@ -34,6 +37,6 @@ router.route('/:id/deny')
   .put(protect, admin, denyOrder);
 
 router.route('/:id/shipment')
-  .put(protect, admin, updateShipmentStatus);
+  .put(protect, admin, updateShipmentDetails);
 
 export default router;
