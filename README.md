@@ -5,6 +5,15 @@ This is a professional README file for a standard MERN stack web application for
 ## Description
 
 This application provides a platform for users(agents) to browse, purchase, and manage products online.  Users can create accounts, add items to their carts, proceed to checkout, and view their order history.  Administrators have access to manage products, orders, and users.
+## Demo
+1.  **Home page:**
+![image](https://github.com/user-attachments/assets/b5ac1c4f-ce3e-4412-91f4-8077c347486d)
+2.  **Products page:**
+![image](https://github.com/user-attachments/assets/979c30d2-7544-4662-9687-0978ea88242c)
+3.   **Dashboard:**
+![image](https://github.com/user-attachments/assets/4918e44b-7552-4803-844f-c448fcf7aff4)
+4.   **Product Details:**
+![image](https://github.com/user-attachments/assets/99137e43-cdd6-4b98-98a2-72f531bd51d0)
 
 ## Technologies
 
@@ -18,28 +27,20 @@ This application provides a platform for users(agents) to browse, purchase, and 
 
 1.  **Clone the repository:**
 ```
-bash
-    git clone https://github.com/TeddyMeg/EthioChicken-ERP
-    
+git clone https://github.com/TeddyMeg/EthioChicken-ERP  
 ```
 2.  **Navigate to the project directory for front-end:**
 ```
-bash
-    cd backend
-    
+cd backend 
 ```
 3.  **Install dependencies:**
 ```
-bash
-    npm install
-    
+npm install   
 ```
 4.  **Set up environment variables (see below).**
 5.  **Start the development server:**
 ```
-bash
-    npm run server
-    
+npm run server  
 ```
 **The server runs at: http://localhost:5000/**
 
@@ -47,28 +48,20 @@ bash
 
 1.  **Clone the repository:**
 ```
-bash
-    git clone https://github.com/TeddyMeg/EthioChicken-ERP
-    
+git clone https://github.com/TeddyMeg/EthioChicken-ERP   
 ```
 2.  **Navigate to the project directory for front-end:**
 ```
-bash
-    cd frontend
-    
+cd frontend   
 ```
 3.  **Install dependencies:**
 ```
-bash
-    npm install
-    
+npm install 
 ```
 4.  **Set up environment variables (see below).**
 5.  **Start the development server:**
 ```
-bash
-    npm run dev
-    
+npm run dev  
 ```
 **The server runs at:  http://localhost:5173/**
 
