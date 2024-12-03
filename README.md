@@ -1,6 +1,6 @@
-# EthioChicken ERP Web Application
+# EthioChicken ERP Demo Web Application
 
-This is a professional README file for a standard MERN stack web application for EthioChicken ERP.
+This is a README file for a standard MERN stack web application to simulate the business workflow for EthioChicken ERP.
 
 ## Description
 
