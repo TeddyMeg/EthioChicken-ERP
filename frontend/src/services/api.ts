@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 
-const BASE_URL = 'http://localhost:5000/api';
-
+// const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://ethiochicken-erp-backend.onrender.com/api'
 interface ApiResponse<T> {
   data: T;
   error?: string;
