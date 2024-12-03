@@ -4,18 +4,19 @@ import { toast } from 'react-toastify';
 import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
 
-interface RegisterFormData {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  company: string;
-  phone: string;
-  address: {
-    street: string;
-    city: string;
-    region: string;
-  };
+interface Address { 
+  street: string; 
+  city: string; 
+  region: string; 
+} 
+interface RegisterFormData { 
+  name: string; 
+  email: string; 
+  password: string; 
+  confirmPassword: string; 
+  company: string; 
+  phone: string; 
+  address: Address; 
 }
 
 const Register = () => {
@@ -43,7 +44,7 @@ const Register = () => {
       setFormData(prev => ({
         ...prev,
         [parent]: {
-          ...prev[parent as keyof RegisterFormData],
+          ...(prev[parent as keyof RegisterFormData] as Address),
           [child]: value
         }
       }));
