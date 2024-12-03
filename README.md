@@ -1,4 +1,4 @@
-# Ethichicken ERP Web Application
+# Ethio Chicken ERP Web Application
 
 This is a professional README file for a standard MERN stack web application for Ethichicken ERP.
 
