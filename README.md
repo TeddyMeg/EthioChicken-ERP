@@ -44,6 +44,8 @@ npm run server
 ```
 **The server runs at: http://localhost:5000/**
 
+**But you need to update BASE_URL in ./frontend/services/api.ts to http://localhost:5000/ when running on VSCODE**
+
 ### Frontend Setup
 
 1.  **Clone the repository:**
