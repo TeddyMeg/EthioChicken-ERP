@@ -37,7 +37,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
-  const [orderLoading, setOrderLoading] = useState(false);
+  const [orderLoading] = useState(false);
   const addToCart = useCartStore(state => state.addItem);
   const { addItem: addToCollection, hasItem: isInCollection, removeItem: removeFromCollection } = useCollectionStore();
   const { reviews, loading: reviewsLoading, fetchProductReviews, createReview } = useReviews(id);
