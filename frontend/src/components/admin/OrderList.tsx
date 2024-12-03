@@ -7,9 +7,6 @@ import {
   TableHeaderCell,
   TableBody,
   TableCell,
-  Badge,
-  SelectItem,
-  Button,
 } from '@tremor/react';
 import { Calendar } from 'lucide-react';
 import { Order } from '../../hooks/useOrders';
