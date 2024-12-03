@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import Footer from '../components/layout/Footer';
 
 const Home = () => {
   const fadeIn = {
@@ -184,7 +185,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
     </div>
+    
   );
 };
 

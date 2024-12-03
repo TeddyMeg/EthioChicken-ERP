@@ -18,6 +18,7 @@ import Cart from './pages/cart/Cart';
 import Collections from './pages/collections/Collections';
 import PrivateRoute from './components/auth/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
             </Routes>
           </main>
           <ToastContainer position="top-right" autoClose={3000} />
+          <Footer/>
         </div>
       </Router>
     </AuthProvider>

@@ -32,6 +32,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [user]);
 
+  
+
   const login = (userData: User) => {
     setUser(userData);
   };
