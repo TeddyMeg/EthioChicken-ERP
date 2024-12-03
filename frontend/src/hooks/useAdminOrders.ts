@@ -55,11 +55,29 @@ export const useAdminOrders = () => {
     }
   };
 
+  const handleShipment = async (orderId: string) => {
+    try {
+      const { data } = await api.put<Order>(
+        `/orders/${orderId}/shipment`,
+        {}, // No data needed for shipment, just triggering the action
+        user?.token
+      );
+      setOrders(prev => prev.map(order =>
+        order._id === orderId ? data : order
+      ));
+      toast.success('Order marked as shipped successfully');
+    } catch (error) {
+      toast.error('Failed to mark order as shipped');
+      throw error;
+    }
+  };
+
   return {
     orders,
     loading,
     fetchAllOrders,
     updateOrderStatus,
-    updateDeliveryDate
+    updateDeliveryDate,
+    handleShipment,
   };
 };

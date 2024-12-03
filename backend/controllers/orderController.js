@@ -131,6 +131,72 @@ const getMyOrders = asyncHandler(async (req, res) => {
   res.json(orders);
 });
 
+// @desc    Confirm order (admin)
+// @route   PUT /api/orders/:id/confirm
+// @access  Private/Admin
+const confirmOrder = asyncHandler(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+
+  if (order) {
+    if (order.status === 'pending') {
+      order.status = 'confirmed';
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
+    } else {
+      res.status(400);
+      throw new Error('Order is not in pending state');
+    }
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+// @desc    Deny order (admin)
+// @route   PUT /api/orders/:id/deny
+// @access  Private/Admin
+const denyOrder = asyncHandler(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+
+  if (order) {
+    if (order.status === 'pending') {
+      order.status = 'denied';
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
+    } else {
+      res.status(400);
+      throw new Error('Order is not in pending state');
+    }
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+// @desc    Update shipment details (admin)
+// @route   PATCH /api/orders/:id/shipment
+// @access  Private/Admin
+const updateShipmentDetails = asyncHandler(async (req, res) => {
+  const { trackingNumber, carrier } = req.body;
+  const order = await Order.findById(req.params.id);
+
+  if (order) {
+    if (order.status === 'confirmed' || order.status === 'shipped') {
+      order.status = 'shipped'; // Update status to shipped if it was confirmed
+      order.shippingDetails = { trackingNumber, carrier };
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
+    } else {
+      res.status(400);
+      throw new Error('Order is not in a shippable state');
+    }
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+
 export { 
   getAllOrders,
   createOrder, 
@@ -138,5 +204,8 @@ export {
   updateOrder,
   deleteOrder,
   updateOrderStatus, 
-  getMyOrders 
+  getMyOrders, 
+  confirmOrder,
+  denyOrder,
+  updateShipmentDetails,
 };

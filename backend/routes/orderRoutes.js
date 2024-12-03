@@ -27,4 +27,13 @@ router.route('/:id')
 router.route('/:id/status')
   .put(protect, admin, updateOrderStatus);
 
+  router.route('/:id/confirm')
+  .put(protect, admin, confirmOrder);
+
+router.route('/:id/deny')
+  .put(protect, admin, denyOrder);
+
+router.route('/:id/shipment')
+  .put(protect, admin, updateShipmentStatus);
+
 export default router;

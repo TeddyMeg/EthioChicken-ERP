@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { useAdminOrders } from '../../hooks/useAdminOrders';
 import OrderList from '../../components/admin/OrderList.tsx';
 import { Package } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 
 const ManageOrders = () => {
-  const { orders, loading, fetchAllOrders, updateOrderStatus, updateDeliveryDate } = useAdminOrders();
+  const { orders, loading, fetchAllOrders, updateOrderStatus, updateDeliveryDate, handleShipment } = useAdminOrders();
 
   useEffect(() => {
     fetchAllOrders();
@@ -28,7 +29,16 @@ const ManageOrders = () => {
           <Package className="animate-spin text-red-600" size={40} />
         </div>
       ) : (
-        <OrderList orders={orders} onUpdateStatus={updateOrderStatus} onUpdateDeliveryDate={updateDeliveryDate}/>
+        <OrderList
+          orders={orders}
+          onUpdateStatus={(orderId, newStatus) => {
+            updateOrderStatus(orderId, newStatus)
+              .then(() => toast.success('Order status updated successfully!'))
+              .catch(err => toast.error('Error updating order status: ' + err.message));
+          }}
+          onUpdateDeliveryDate={updateDeliveryDate}
+          onHandleShipment={handleShipment}
+        />
       )}
     </div>
   );
