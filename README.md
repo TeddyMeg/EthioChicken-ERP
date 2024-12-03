@@ -69,7 +69,7 @@ npm run dev
 
 ## Environment Variables
 
-*   **MONGODB_URI:**  MongoDB connection string (e.g., `mongodb+srv://admin:admin@cluster0.avwxy.mongodb.net/ethiochicken?retryWrites=true&w=majority&appName=Cluster0`).
+*   **MONGODB_URI:**  MongoDB connection string.
 *   **PORT:** Port number for the backend server (default: 5000).
 *   **JWT_SECRET:** Secret key for JSON Web Tokens (JWT).  **Generate a strong secret key.**
 
