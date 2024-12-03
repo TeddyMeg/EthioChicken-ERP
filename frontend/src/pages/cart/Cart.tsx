@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../context/AuthContext';
 import { useCartStore } from '../../store/useCartStore';
 import { useOrders } from '../../hooks/useOrders';
 import CartItem from '../../components/cart/CartItem';
@@ -10,7 +9,6 @@ import { ShoppingBag, Loader2 } from 'lucide-react';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
   const { items, clearCart } = useCartStore();
   const getTotal = useCartStore(state => state.getTotal);
   const { createOrder } = useOrders();
